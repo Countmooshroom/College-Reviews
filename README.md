@@ -16,3 +16,7 @@ If you would like to commit changes to this project:
 
 1. Delete your virtual environment.
 2. In either GitHub for Desktop or VS Code, commit the changes with a description and push them to the origin.
+
+Accessing the admin site:
+
+1. At /admin, you can log in with the default username "admin" and the password "password".
