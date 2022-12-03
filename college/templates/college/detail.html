@@ -17,4 +17,7 @@ Vote
     <input type="submit" value="Vote">
 </form>
 
+<br>
+<a href="{% url 'college:results' question.id %}">View Results</a>
+
 {% endblock %}

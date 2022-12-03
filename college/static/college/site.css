@@ -1,0 +1,11 @@
+.navbar {
+    padding: 10px;
+    text-align: center;
+    background-color: #ffe294;
+}
+.navbar-item {
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
