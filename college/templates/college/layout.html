@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'college/site.css' %}"/>-->
+</head>
+
+<body>
+<div class="navbar">
+    <a href="{% url 'college:index' %}" class="navbar-item">Home</a>
+</div>
+
+<div class="body-content">
+    {% block content %}
+    {% endblock %}
+    <hr/>
+    <footer>
+        <p>&copy; 2022</p>
+    </footer>
+</div>
+</body>
+</html>
