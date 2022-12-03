@@ -1,0 +1,31 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Register
+{% endblock %}
+{% block content %}
+
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" input="first_name" placeholder="First Name"><br>
+    <input type="text" input="last_name" placeholder="Last Name"><br>
+    <input type="text" input="username" placeholder="Username"><br>
+    <input type="email" input="email" placeholder="Email"><br>
+    <input type="password" input="password1" placeholder="Password"><br>
+    <input type="password" input="password2" placeholder="Confirm Password"><br>
+    <input type="Submit">
+            <!-- I'm not sure what this formatting for, so I'm just trying to get this code running-- then we can reformat it.
+    <fieldset>
+        <legend><h1>{{ question.question_text }}</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        {% for choice in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="Vote">
+            -->
+</form>
+
+<br>
+
+{% endblock %}
