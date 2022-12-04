@@ -16,7 +16,7 @@ def register(request):
         # We can get past this error by removing the first_name and last_name initializations on the next line, but then
         # when a user is created and you go view it in the admin panel, only the username was saved.
         user = User.objects.create_user(username=username, email=email, password=password1, first_name=first_name, last_name=last_name)
-        user.save();
+        user.save()
         print('New user successfully created.')
         return redirect('/')
         # STOP DELETING HERE. Uncomment the section below by highlighting it, and hitting CMD + K + U.
