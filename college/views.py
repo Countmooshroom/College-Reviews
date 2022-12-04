@@ -19,9 +19,18 @@ class DetailView(generic.DetailView):
     template_name = 'college/detail.html'
 
 
-class ResultsView(generic.DetailView):
-    model = Question
-    template_name = 'college/results.html'
+def results(request, pk):
+    question = get_object_or_404(Question, pk=pk)
+    choices = question.choice_set.all().order_by('-votes')
+    total_votes = 0
+    for i in choices:
+        total_votes += i.votes
+    return render(request, 'college/results.html', {'question': question, 'choices': choices, 'total_votes': total_votes})
+
+
+#class ResultsView(generic.DetailView):
+#    model = Question.objects.order_by('choice.votes')
+#    template_name = 'college/results.html'
 
 
 def vote(request, question_id):
