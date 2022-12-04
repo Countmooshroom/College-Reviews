@@ -1,15 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
-#from django.views import generic
 
-
-# Create your views here.
-
-#class RegisterView(generic.ListView):
- #   template_name = 'college/index.html'
 
 def register(request):
-    return render(request, 'register.html')
+    return render(request, 'college/register.html')
     if request.method == 'POST':
         print('top') # We run into the issue after this line.
         first_name = request.POST['first_name']
