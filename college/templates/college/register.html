@@ -4,7 +4,7 @@ Register
 {% endblock %}
 {% block content %}
 
-<form action="register" method="post">
+<form action="{% url 'accounts:register' %}" method="post">
     {% csrf_token %}
     <input type="text" input="first_name" placeholder="First Name"><br>
     <input type="text" input="last_name" placeholder="Last Name"><br>

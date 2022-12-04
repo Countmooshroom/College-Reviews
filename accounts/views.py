@@ -3,7 +3,6 @@ from django.contrib.auth.models import User, auth
 
 
 def register(request):
-    return render(request, 'college/register.html')
     if request.method == 'POST':
         print('top') # We run into the issue after this line.
         first_name = request.POST['first_name']
