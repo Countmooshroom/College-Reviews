@@ -12,7 +12,6 @@ How to run this Django project in GitHub for Desktop with Visual Studio Code:
 8. Install Django: python -m pip install django
 9. Run the project: python manage.py runserver
 
-If you would like to commit changes to this project:
+Accessing the admin site:
 
-1. Delete your virtual environment.
-2. In either GitHub for Desktop or VS Code, commit the changes with a description and push them to the origin.
+1. At /admin, you can log in with the default username "admin" and the password "password".
