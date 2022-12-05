@@ -5,13 +5,17 @@ from django.views import generic
 from .models import Choice, Question
 
 
-class IndexView(generic.ListView):
-    template_name = 'college/index.html'
-    context_object_name = 'latest_question_list'
-
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
+def index(request):
+    choices = Choice.objects.all().values().order_by('-votes')
+    questions = Question.objects.all().values()
+    return render(request, 'college/index.html', {'choices': choices, 'questions': questions})
+#class IndexView(generic.ListView):
+#    template_name = 'college/index.html'
+#    context_object_name = 'latest_question_list'
+#
+#    def get_queryset(self):
+#        """Return the last five published questions."""
+#        return Question.objects.order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
@@ -26,11 +30,6 @@ def results(request, pk):
     for i in choices:
         total_votes += i.votes
     return render(request, 'college/results.html', {'question': question, 'choices': choices, 'total_votes': total_votes})
-
-
-#class ResultsView(generic.DetailView):
-#    model = Question.objects.order_by('choice.votes')
-#    template_name = 'college/results.html'
 
 
 def vote(request, question_id):
