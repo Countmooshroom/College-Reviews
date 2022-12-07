@@ -1,0 +1,21 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Review {{ prof.name }}
+{% endblock %}
+{% block content %}
+
+<form action="{% url 'teachers:save' prof.name %}" method="post"> <!--Eventually change link-->
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>{{ prof.name }}</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <label for="homework">On a scale of 1 (none) to 5 (lots), how much homework did this teacher assign?</label><br>
+        <input type="number" name="homework" id="homework" value="1" min="1" max="5"><br><br>
+        
+        <label for="difficulty">On a scale of 1 (easy) to 5 (hard), how difficult were this teacher's classes overall?</label><br>
+        <input type="number" name="difficulty" id="difficulty" value="1" min="1" max="5"><br>
+    </fieldset>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

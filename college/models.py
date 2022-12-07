@@ -18,3 +18,13 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text
+
+
+class Teacher(models.Model):
+    name = models.CharField(max_length=200)
+    homework_sum = models.IntegerField(default=0)
+    homework_count = models.IntegerField(default=0)
+    difficulty_sum = models.IntegerField(default=0)
+    difficulty_count = models.IntegerField(default=0)
+    def __str__(self):
+        return self.name
