@@ -9,13 +9,6 @@ def index(request):
     choices = Choice.objects.all().values().order_by('-votes')
     questions = Question.objects.all().values()
     return render(request, 'college/index.html', {'choices': choices, 'questions': questions})
-#class IndexView(generic.ListView):
-#    template_name = 'college/index.html'
-#    context_object_name = 'latest_question_list'
-#
-#    def get_queryset(self):
-#        """Return the last five published questions."""
-#        return Question.objects.order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
@@ -45,9 +38,6 @@ def vote(request, question_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
         return HttpResponseRedirect(reverse('college:results', args=(question.id,)))
 
 def detail(request, question_id):
