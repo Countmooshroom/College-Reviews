@@ -1,11 +1,43 @@
-.navbar {
-    padding: 10px;
-    text-align: center;
-    background-color: #ffe294;
+
+/* ------------- NAV BAR ------------- */
+* {
+    transition:all 0.3s ease-in-out;
 }
-.navbar-item {
+
+.navbar {
+    clear: both;
+    overflow: auto;
+    background-image: linear-gradient(#D3D3D3, darkgray);
+    padding: 0 10px 0 0;
+    border-bottom: 2px;
+    border-color: black;
+    border-style: groove;
+}
+
+nav {
+    float:right;
+}
+
+.logo img {
+    float: left;
+    padding: 10px;
+}
+
+nav ul li {
     text-decoration: none;
     border: 2px solid black;
     border-radius: 5px;
-    padding: 5px;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    font-family: raleway, sans-serif;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+  color:orange;
 }
