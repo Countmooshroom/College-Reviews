@@ -54,3 +54,7 @@ def register(request):
 
     else:
         return render(request, 'college/register.html')
+
+def logout(request):
+    auth.logout(request)
+    return render(request, 'college/register.html')

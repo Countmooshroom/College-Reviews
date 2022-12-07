@@ -4,15 +4,29 @@
     <meta charset="utf-8"/>
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'college/site.css' %}"/>
+    <!-- To update the CSS and show your changes on the local server, just update the version number. -->
+    <link rel="stylesheet" type="text/css" href="{% static 'college/site.css' %}?version=1.2"/>
 </head>
 
 <body>
-<div class="navbar">
-    <a href="{% url 'college:index' %}" class="navbar-item">Home</a>
-    <a href="{% url 'accounts:login' %}" class="navbar-item">Login</a>
-    <a href="{% url 'accounts:register' %}" class="navbar-item">Register</a>
-</div>
+<header class="navbar">
+    <div class="logo">
+      <img src="https://penji.co/wp-content/uploads/2019/06/beats-by-dre-cool-logo.jpg" alt="" width="130"/>
+    </div>
+    <nav>
+        <ul>
+            <li class="active"><a href="{% url 'college:index' %}" class="navbar-item">Home</a></li>
+            {% if user.is_authenticated %}
+            <li>Hello, {{user.first_name}}!</li>
+            <li><a href="{% url 'accounts:logout' %}" class="navbar-item">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'accounts:login' %}" class="navbar-item">Login</a></li>
+            <li><a href="{% url 'accounts:register' %}" class="navbar-item">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<hr class="hr1"/>
 
 <div class="body-content">
     {% block content %}
