@@ -15,9 +15,4 @@ Home
     <p>No classes are available.</p>
 {% endif %}
 
-<h2>Top Voted Professors</h2>
-{% for choice in choices %}
-    <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-
 {% endblock %}
