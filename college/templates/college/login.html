@@ -1,0 +1,22 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+
+<form action="login" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username" required><br>
+    <input type="password" name="password" placeholder="password" required><br>
+    <input type="Submit">
+</form>
+
+<div>
+    {% for message in messages %}
+    <h4> {{message}} </h4>
+    {% endfor %}
+</div>
+
+<br>
+
+{% endblock %}

@@ -1,8 +1,24 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.contrib.auth.models import User# , auth # User: send the data back to the User table. auth: Needed for logging in.
+from django.contrib.auth.models import User, auth # User: send the data back to the User table. auth: Needed for logging in.
 
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = auth.authenticate(username=username, password=password)
+    
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Invalid credentials.')
+            return HttpResponseRedirect(request.path_info)
+
+    else:
+        return render(request, 'college/register.html')
 
 def register(request):
     if request.method == 'POST':
@@ -30,7 +46,7 @@ def register(request):
                 user.save()
                 print('New user successfully created.')
                 messages.info(request, 'New user successfully created.')
-                return HttpResponseRedirect(request.path_info)
+                return render(request, 'college/login.html')
         else:
             print("The passwords don't match!")
             messages.info(request, "The passwords don't match!")
