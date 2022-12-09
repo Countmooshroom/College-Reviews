@@ -4,15 +4,39 @@ Home
 {% endblock %}
 {% block content %}
 
-<h1>List of Classes</h1>
-{% if questions %}
-    <ul>
-    {% for question in questions %}
-        <li><a href="{% url 'college:detail' question.id %}">{{ question.question_text }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No classes are available.</p>
-{% endif %}
+<h1 class="main-heading">College Reviews</h1>
+<p class="tagline">A free tool to pick the best college instructors for your needs!</p>
+
+<div class="row">
+    <div class="column" style="background-color:#92c705;">
+        <h2>By Classes</h2>
+        {% if questions %}
+            <ul>
+            {% for question in questions %}
+                <li><a href="{% url 'college:detail' question.id %}">{{ question.question_text }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No classes are available.</p>
+        {% endif %}
+    </div>
+    <div class="column" style="background-color:#ec6011;">
+        <h2>By Instructors</h2>
+        {% if choices %}
+            <ul>
+            {% for choice in choices %}
+                <li><a href="teachers/{{ choice.choice_text }}">{{ choice.choice_text }}</a></li>
+            {% endfor %}
+                <li><a href="{% url 'teachers:teachers' %}">View All...</a></li>
+            </ul>
+        {% else %}
+            <p>No teachers are available.</p>
+        {% endif %}
+    </div>
+    <div class="column" style="background-color:#2cccc4;">
+        <h2>(Future Column)</h2>
+        <!--Future column-->
+    </div>
+</div> 
 
 {% endblock %}
