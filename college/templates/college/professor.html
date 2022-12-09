@@ -4,10 +4,17 @@ List of Teachers
 {% endblock %}
 {% block content %}
 
-
 <h1>{{ prof.name }}</h1>
-<p>Average amount of homework: {% widthratio prof.homework_sum prof.homework_count 1 %}/5</p>
-<p>Average overall difficulty: {% widthratio prof.difficulty_sum prof.difficulty_count 1 %}/5</p>
+
+<p>Average amount of homework:<br>
+{% load static %}
+<img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.homework_sum prof.homework_count 1 %}.png" width="150px" />
+{% widthratio prof.homework_sum prof.homework_count 1 %}/5</p>
+
+<p>Average overall difficulty:<br>
+{% load static %}
+<img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.difficulty_sum prof.difficulty_count 1 %}.png" width="150px" />
+{% widthratio prof.difficulty_sum prof.difficulty_count 1 %}/5</p>
 
 <a href="{% url 'teachers:review' prof.name %}">Add a Review</a>
 
