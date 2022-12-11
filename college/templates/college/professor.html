@@ -6,6 +6,7 @@ List of Teachers
 
 <h1 class="prof-name">{{ prof.name }}</h1>
 
+{% if prof.homework_count %}
 <div class="row center-text" id="prof-stats">
     <div class="column">
         <p>Average amount of homework:<br>
@@ -30,6 +31,11 @@ List of Teachers
         {% widthratio prof.difficulty_sum prof.difficulty_count 1 %}/5</p>
     </div>
 </div>
+{% else %}
+<div class="center-text">
+    <p>No data found.</p>
+</div>
+{% endif %}
 
 <br><br>
 <div class="center-text">
