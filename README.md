@@ -4,7 +4,7 @@ How to run this Django project with Visual Studio Code:
 
 1. Clone and fetch this repository.
 2. Open a command line and navigate to the College-Reviews folder
-3. Open the files with Visual Studio Code.  Assuming you have Python3 installed, start a virtual environment here with the command line. (Extra instructions: https://code.visualstudio.com/docs/python/tutorial-django)
+3. Open the files with Visual Studio Code.  Assuming you have Python3 installed, start a virtual environment here with the command line. (Extra instructions: https://code.visualstudio.com/docs/python/tutorial-django#_create-a-project-environment-for-the-django-tutorial)
 4. In VS Code, select a new interpreter at view > command palette > python:select interpreter, and choose the virtual environment.
 5. Close your terminal and make a new one; it should activate the venv.
 6. Update pip: python -m pip install --upgrade pip
