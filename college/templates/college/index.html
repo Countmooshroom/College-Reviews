@@ -24,7 +24,7 @@ Home
         <h2>By Instructors</h2>
         {% if choices %}
             <ul>
-            {% for choice in choices %}
+            {% for choice in choices|slice:":5" %}
                 <li><a href="teachers/{{ choice.choice_text }}">{{ choice.choice_text }}</a></li>
             {% endfor %}
                 <li><a href="{% url 'teachers:teachers' %}">View All...</a></li>
