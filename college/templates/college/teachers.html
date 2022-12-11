@@ -5,8 +5,8 @@ List of Teachers
 {% block content %}
 
 <h1>List of Professors</h1>
-{% for choice in choices %}
-    <li><a href="{{ choice.choice_text }}">{{ choice.choice_text }}</a></li>
+{% for teacher in teacher_list %}
+    <li><a href="{{ teacher }}">{{ teacher }}</a></li>
 {% endfor %}
 
 <h2>Top Voted Professors</h2>

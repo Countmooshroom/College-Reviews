@@ -5,7 +5,11 @@ from college.models import Choice, Teacher
 
 def teachers(request):
     choices = Choice.objects.all().values().order_by('-votes')
-    return render(request, 'college/teachers.html', {'choices': choices})
+    teacher_list = []
+    for choice in choices:
+        teacher_list.append(choice['choice_text'])
+    teacher_list = list(dict.fromkeys(teacher_list))#remove duplicates
+    return render(request, 'college/teachers.html', {'choices': choices, 'teacher_list': teacher_list})
 
 def professor(request, name):
     prof = get_object_or_404(Teacher, name=name)
