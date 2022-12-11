@@ -12,9 +12,10 @@ Home
         <h2>By Classes</h2>
         {% if questions %}
             <ul>
-            {% for question in questions %}
+            {% for question in questions|slice:":5" %}
                 <li><a href="{% url 'college:detail' question.id %}">{{ question.question_text }}</a></li>
                 {% endfor %}
+                <li><a href="{% url 'college:courses' %}">View All...</a></li>
             </ul>
         {% else %}
             <p>No classes are available.</p>

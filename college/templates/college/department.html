@@ -1,0 +1,16 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Classes
+{% endblock %}
+{% block content %}
+
+<h1>Department: {{ dept }}</h1>
+<h3>Course List</h3>
+
+<ul>
+{% for course in courses %}
+<li><a href="{% url 'college:detail' course.id %}">{{ course.question_text }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

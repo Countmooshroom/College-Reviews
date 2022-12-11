@@ -11,6 +11,24 @@ def index(request):
     return render(request, 'college/index.html', {'choices': choices, 'questions': questions})
 
 
+def courses(request):
+    questions = Question.objects.all().values()
+    departments = []
+    for q in questions:
+        departments.append(q['question_text'][:4])
+    departments = sorted(list(dict.fromkeys(departments)))#remove duplicates and sort
+    return render(request, 'college/courses.html', {'questions': questions, 'departments': departments})
+
+
+def department(request, dept):
+    questions = Question.objects.all().values().order_by('question_text')
+    courses = []
+    for course in questions:
+        if course['question_text'].startswith(dept):
+            courses.append(course)
+    return render(request, 'college/department.html', {'dept': dept, 'courses': courses})
+
+
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'college/detail.html'

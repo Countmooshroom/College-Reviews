@@ -1,0 +1,22 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Classes
+{% endblock %}
+{% block content %}
+
+<h1>Classes</h1>
+<h3>By Department</h3>
+
+<div class="row center-text dept-row">
+{% for dept in departments %}
+<a class="fill-div" href="courses/{{ dept }}"><div class="column dept-col" style="background-color:#92c705;">{{ dept }}</div></a>
+    {% if forloop.last %}
+        </div>
+    {% else %}
+        {% if forloop.counter|divisibleby:"3" %}
+        </div><div class="row center-text dept-row">
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

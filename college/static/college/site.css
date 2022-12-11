@@ -76,6 +76,13 @@ li > a {
     color: rgb(61, 0, 152);
 }
 
+.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
 /* ------------- COLUMN LAYOUT ------------- */
 .column {
     flex: 1;
@@ -85,6 +92,15 @@ li > a {
 
 .row {
     display: flex;
+}
+
+.dept-row {
+    padding: 10px
+}
+.dept-col {
+    padding: 30px 15px 30px 15px;
+    font: 24px raleway, sans-serif;
+    color: rgb(0, 56, 146);
 }
 
 #home-col {
