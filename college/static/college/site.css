@@ -7,7 +7,7 @@
 .navbar {
     clear: both;
     overflow: auto;
-    background-image: linear-gradient(#D3D3D3, darkgray);
+    /*background-image: linear-gradient(#D3D3D3, darkgray);*/
     padding: 0 10px 0 0;
     border-bottom: 2px;
     border-color: black;
@@ -34,7 +34,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -138,3 +138,8 @@ li > a {
     }
 }
 
+
+/* ------------- CURSOR ------------- */
+body {
+    cursor: default;
+}
