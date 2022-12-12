@@ -12,13 +12,16 @@ def login(request):
     
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            print('userNNNNN')
+            return render(request, 'college/register.html') # go to home
         else:
             messages.info(request, 'Invalid credentials.')
-            return HttpResponseRedirect(request.path_info)
+            print('ELLSESEE')
+            return HttpResponseRedirect(request.path_info) # stay on login page to try again
 
     else:
-        return render(request, 'college/register.html')
+        print('LASTTTTT')
+        return render(request, 'college/login.html')
 
 def register(request):
     if request.method == 'POST':
@@ -57,4 +60,5 @@ def register(request):
 
 def logout(request):
     auth.logout(request)
-    return render(request, 'college/register.html')
+    messages.info(request, 'You have logged out.')
+    return render(request, 'college/login.html')
