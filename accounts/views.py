@@ -12,15 +12,15 @@ def login(request):
     
         if user is not None:
             auth.login(request, user)
-            print('userNNNNN')
-            return render(request, 'college/register.html') # go to home
+            print('if user is not none: WORKING')
+            return redirect('/') # go to home
         else:
             messages.info(request, 'Invalid credentials.')
-            print('ELLSESEE')
-            return HttpResponseRedirect(request.path_info) # stay on login page to try again
+            print('nested else login: WORKING')
+            return HttpResponseRedirect(request.path_info) # stay on login page
 
     else:
-        print('LASTTTTT')
+        print('last else: working')
         return render(request, 'college/login.html')
 
 def register(request):
