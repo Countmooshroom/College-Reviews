@@ -1,3 +1,11 @@
+/* ------------- GLOBAL ------------- */
+
+html, body {
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
 
 /* ------------- NAV BAR ------------- */
 * {
@@ -7,11 +15,14 @@
 .navbar {
     clear: both;
     overflow: auto;
-    /*background-image: linear-gradient(#D3D3D3, darkgray);*/
     padding: 0 10px 0 0;
     border-bottom: 2px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
     border-color: black;
-    border-style: groove;
+    border-style: solid;
+    margin: 0;
 }
 
 nav {
@@ -20,17 +31,16 @@ nav {
 
 .logo img {
     float: left;
-    padding: 10px;
+    padding: 3px;
 }
 
 nav ul li {
     text-decoration: none;
-    border: 2px solid black;
-    border-radius: 5px;
     display: inline-block;
     padding: 10px;
     font-size: 20px;
     font-family: raleway, sans-serif;
+    font-weight: bold;
 }
 
 nav ul li a {
@@ -46,7 +56,7 @@ nav ul li a:hover {
     border: none;
 }
 
-.nav-logout {
+.nav-logout, .nav-register {
     position: relative;
     font-size: small;
     float: right;
@@ -142,4 +152,43 @@ li > a {
 /* ------------- CURSOR ------------- */
 body {
     cursor: default;
+}
+
+
+/* ------------- LOGIN & REGISTER FORMS ------------- */
+form.login {
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+form > input {
+    margin-top: 30px;
+}
+
+div.full-width-row {
+    display: block;
+    text-align: center;
+}
+
+.submit-button {
+    width: 100%;
+    text-align: center;
+}
+
+.form-submit {
+    width: 80%;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.form-submit:hover {
+    background-color: orange;
+}
+
+.error-message {
+    color: red;
 }

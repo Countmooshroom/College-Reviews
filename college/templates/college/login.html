@@ -4,19 +4,35 @@ Login
 {% endblock %}
 {% block content %}
 
-<form action="{% url 'accounts:login' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="username" required><br>
-    <input type="password" name="password" placeholder="password" required><br>
-    <input type="Submit">
-</form>
+<div class="full-width-row">
+    <form class="login" action="{% url 'accounts:login' %}" method="post">
+        {% csrf_token %}
+        <h2>Login</h2>
+        <fieldset>
+            <legend>Hi there!</legend>
+            <p>
+              <label for="title_1">
+                Username:
+                <input type="text" name="username" required>
+              </label>
+            </p>
+            <p>
+              <label for="title_2">
+                Password:
+                <input type="password" name="password" required>
+              </label>
+            </p>
+            <div class="submit-button">
+            <input type="Submit" class="form-submit">
+            </div>
+        </fieldset>
 
-<div>
-    {% for message in messages %}
-    <h4> {{message}} </h4>
-    {% endfor %}
+        <div class="error-message">
+            {% for message in messages %}
+            <h4> {{message}} </h4>
+            {% endfor %}
+        </div>
+    </form>
 </div>
-
-<br>
 
 {% endblock %}

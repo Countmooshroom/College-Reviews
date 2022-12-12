@@ -4,38 +4,59 @@ Register
 {% endblock %}
 {% block content %}
 
-<form action="{% url 'accounts:register' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="first_name" placeholder="First Name" required><br>
-    <input type="text" name="last_name" placeholder="Last Name" required><br>
-    <input type="text" name="username" placeholder="Username" required><br>
-    <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password1" placeholder="Password" required><br>
-    <input type="password" name="password2" placeholder="Confirm Password" required><br>
-    <input type="Submit">
+<div class="full-width-row">
+    <form class="login" action="{% url 'accounts:register' %}" method="post">
+        {% csrf_token %}
+        <h2>Register</h2>
+        <fieldset>
+            <legend>Let's get started!</legend>
+            <p>
+                <label for="title_1">
+                    First name:
+                    <input type="text" name="first_name" required>
+                </label>
+            </p>
+            <p>
+                <label for="title_2">
+                    Last name:
+                    <input type="text" name="last_name" required>
+                </label>
+            </p>
+            <p>
+                <label for="title_2">
+                    Username:
+                    <input type="text" name="username" required>
+                </label>
+            </p>
+            <p>
+                <label for="title_2">
+                    Email:
+                    <input type="email" name="email" required>
+                </label>
+            </p>
+            <p>
+                <label for="title_2">
+                    Password:
+                    <input type="password" name="password1" required>
+                </label>
+            </p>
+            <p>
+                <label for="title_2">
+                    Confirm your Password:
+                    <input type="password" name="password2" required>
+                </label>
+            </p>
+            <div class="submit-button">
+            <input type="Submit" class="form-submit">
+            </div>
+        </fieldset>
 
-
-            <!-- I'm not sure how this formatting works, so I'm just trying to get this code running-- then we can reformat it if we'd like.
-    <fieldset>
-        <legend><h1>{{ question.question_text }}</h1></legend>
-        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        {% for choice in question.choice_set.all %}
-            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
-        {% endfor %}
-    </fieldset>
-    <input type="submit" value="Vote">
-            -->
-
-
-</form>
-
-<div>
-    {% for message in messages %}
-    <h4> {{message}} </h4>
-    {% endfor %}
+        <div class="error-message">
+            {% for message in messages %}
+            <h4> {{message}} </h4>
+            {% endfor %}
+        </div>
+    </form>
 </div>
-
-<br>
 
 {% endblock %}
