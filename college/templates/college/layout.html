@@ -5,7 +5,7 @@
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
     <!-- To update the CSS and show your changes on the local server, just update the version number. -->
-    <link rel="stylesheet" type="text/css" href="{% static 'college/site.css' %}?version=1.3"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'college/site.css' %}?version=1.41"/>
 </head>
 
 <body>
@@ -17,8 +17,9 @@
         <ul>
             <li class="active"><a href="{% url 'college:index' %}" class="navbar-item">Home</a></li>
             {% if user.is_authenticated %}
-            <li>Hello, {{user.first_name}}!</li>
-            <li><a href="{% url 'accounts:logout' %}" class="navbar-item">Logout</a></li>
+            <li class="nav-username">Hello, {{user.first_name}}!</li>
+            <br>
+            <li class="nav-logout"><a href="{% url 'accounts:logout' %}" class="navbar-item">Logout</a></li>
             {% else %}
             <li><a href="{% url 'accounts:login' %}" class="navbar-item">Login</a></li>
             <li><a href="{% url 'accounts:register' %}" class="navbar-item">Register</a></li>

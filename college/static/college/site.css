@@ -42,6 +42,18 @@ nav ul li a:hover {
   color:orange;
 }
 
+.nav-username {
+    border: none;
+}
+
+.nav-logout {
+    position: relative;
+    font-size: small;
+    float: right;
+    border: none;
+    top: -15px;
+}
+
 /* ------------- HEADINGS ------------- */
 
 h1, h2, h3, h4, h5, h6 {
