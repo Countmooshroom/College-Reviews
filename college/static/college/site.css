@@ -1,10 +1,12 @@
 /* ------------- GLOBAL ------------- */
 
 html, body {
-    width:100%;
-    height:100%;
+    /*width:100%;
+    height:100%;*/
     margin:0;
     padding:0;
+    color: white!important;
+    background-color: #36373A;
 }
 
 /* ------------- NAV BAR ------------- */
@@ -13,6 +15,7 @@ html, body {
 }
 
 .navbar {
+    background-color: #24272A;
     clear: both;
     overflow: auto;
     padding: 0 10px 0 0;
@@ -41,15 +44,17 @@ nav ul li {
     font-size: 20px;
     font-family: raleway, sans-serif;
     font-weight: bold;
+    transition: all .2s ease-in-out;
 }
 
 nav ul li a {
-    color: black;
     text-decoration: none;
+    color: white;
 }
 
 nav ul li a:hover {
-  color:orange;
+    color:#FFD670;
+    transform: scale(1.5);
 }
 
 .nav-username {
@@ -95,7 +100,11 @@ p, a, label {
 }
 
 li > a {
-    color: rgb(61, 0, 152);
+    color: #FFD670;
+}
+
+li > a:hover {
+    color: white;
 }
 
 .fill-div {
@@ -186,7 +195,7 @@ div.full-width-row {
 }
 
 .form-submit:hover {
-    background-color: orange;
+    background-color: #FFD670;
 }
 
 .error-message {

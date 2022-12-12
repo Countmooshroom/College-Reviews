@@ -9,7 +9,7 @@ Classes
 
 <div class="row center-text dept-row">
 {% for dept in departments %}
-<a class="fill-div" href="courses/{{ dept }}"><div class="column dept-col" style="background-color:#92c705;">{{ dept }}</div></a>
+<a class="fill-div" href="courses/{{ dept }}"><div class="column dept-col">{{ dept }}</div></a>
     {% if forloop.last %}
         </div>
     {% else %}
