@@ -9,7 +9,7 @@ Classes
 
 <ul>
 {% for course in courses %}
-<li><a href="{% url 'college:detail' course.id %}">{{ course.question_text }}</a></li>
+<li><a href="{% url 'college:detail' course.id %}">{{ course.course_name }}</a></li>
 {% endfor %}
 </ul>
 

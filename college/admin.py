@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Choice, Question, Teacher
+from .models import Choice, Course, Teacher
 
 
 class ChoiceInline(admin.TabularInline):
@@ -8,12 +8,12 @@ class ChoiceInline(admin.TabularInline):
     extra = 1
 
 
-class QuestionAdmin(admin.ModelAdmin):
+class CourseAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,               {'fields': ['question_text']}),
+        (None,               {'fields': ['course_name']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     inlines = [ChoiceInline]
 
-admin.site.register(Question, QuestionAdmin)
+admin.site.register(Course, CourseAdmin)
 admin.site.register(Teacher)

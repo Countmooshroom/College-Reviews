@@ -10,10 +10,10 @@ Home
 <div class="row">
     <div class="column" id="home-col" style="background-color:#6C8724;">
         <h2>By Classes</h2>
-        {% if questions %}
+        {% if courses %}
             <ul>
-            {% for question in questions|slice:":5" %}
-                <li><a href="{% url 'college:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% for course in courses|slice:":5" %}
+                <li><a href="{% url 'college:detail' course.id %}">{{ course.course_name }}</a></li>
                 {% endfor %}
                 <li><a href="{% url 'college:courses' %}">View All...</a></li>
             </ul>

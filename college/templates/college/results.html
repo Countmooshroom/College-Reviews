@@ -4,7 +4,7 @@ Results
 {% endblock %}
 {% block content %}
 
-<h1>{{ question.question_text }}</h1>
+<h1>{{ course.course_name }}</h1>
 <h2>Top Professor{{ choices.count|pluralize }}</h2>
 
 <ol>
@@ -13,6 +13,6 @@ Results
 {% endfor %}
 </ol>
 
-<a href="{% url 'college:detail' question.id %}">Vote again?</a>
+<a href="{% url 'college:detail' course.id %}">Vote again?</a>
 
 {% endblock %}
