@@ -48,13 +48,10 @@ def save(request, name):
             'error_message': "You didn't select a choice.",
         })
     else:
-        prof.homework_sum += int(homework)
-        prof.homework_count += 1
-        prof.difficulty_sum += int(difficulty)
-        prof.difficulty_count += 1
-        prof.essays_sum += int(essays)
-        prof.essays_count += 1
-        prof.attendance_sum += int(attendance)
-        prof.attendance_count += 1
+        prof.votes += 1
+        prof.homework += int(homework)
+        prof.difficulty += int(difficulty)
+        prof.essays += int(essays)
+        prof.attendance += int(attendance)
         prof.save()
         return HttpResponseRedirect(reverse('teachers:professor', args=(name,)))

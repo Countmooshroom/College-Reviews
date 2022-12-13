@@ -22,14 +22,11 @@ class Choice(models.Model):
 
 class Teacher(models.Model):
     name = models.CharField(max_length=200)
-    homework_sum = models.IntegerField(default=0)
-    homework_count = models.IntegerField(default=0)
-    essays_sum = models.IntegerField(default=0)
-    essays_count = models.IntegerField(default=0)
-    attendance_sum = models.IntegerField(default=0)
-    attendance_count = models.IntegerField(default=0)
-    difficulty_sum = models.IntegerField(default=0)
-    difficulty_count = models.IntegerField(default=0)
+    votes = models.IntegerField(default=0)
+    homework = models.IntegerField(default=0)
+    essays = models.IntegerField(default=0)
+    attendance = models.IntegerField(default=0)
+    difficulty = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
