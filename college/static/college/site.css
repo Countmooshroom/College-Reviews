@@ -1,12 +1,14 @@
 /*  ------------- TABLE OF CONTENTS -------------
-1. Color Scheme
-2. Global
-3. Navigation
-4. Headings
-5. Text
-6. Column Layout
-7. Login & Register Forms
-8. Footer
+1.  Color Scheme
+2.  Global
+3.  Navigation
+      Nav Bar
+      Search Bar
+4.  Headings
+5.  Text
+6.  Column Layout
+7.  Login & Register Forms
+8.  Footer
 */
 
 
@@ -52,7 +54,8 @@ html, body {
 
 
 
-/* ------------- NAV BAR ------------- */
+/* ------------- NAVIGATION ------------- */
+/* Nav Bar */
 * {
     transition:all 0.3s ease-in-out;
 }
@@ -113,7 +116,17 @@ nav ul li a:hover {
 }
 
 
+/* Search Bar */
+.search {
+    width: 100%;
+    float: right;
+}
 
+.search > .form-submit {
+    width: 10%;
+    float: right;
+    background-color: red;
+}
 
 
 /* ------------- HEADINGS ------------- */
@@ -270,9 +283,13 @@ div.full-width-row {
 }
 
 .form-submit {
-    width: 80%;
     margin-top: 5px;
     padding: 5px;
+}
+
+
+.w80 {
+    width: 80%;
 }
 
 .form-submit:hover {

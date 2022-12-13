@@ -5,6 +5,7 @@ List of Teachers
 {% block content %}
 
 <div class="center-text">
+
     <h1>Top Voted Professors</h1>
     {% for choice in choices|slice:":5" %}
         <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
@@ -12,6 +13,13 @@ List of Teachers
 
     <h1>Teachers</h1>
     <h3>By Rating</h3>
+
+    <div class="search">
+        <form action="{% url 'college:searchbar' %}" method="get">
+            <input type="text" name="search">
+            <input type="Submit" class="form-submit" value="Search">
+        </form>
+    </div>
 
     <div class="row dept-row">
     {% for teacher in teacher_list %}

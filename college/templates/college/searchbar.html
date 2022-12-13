@@ -1,0 +1,10 @@
+{% if post %}
+<h1>Search Result Found</h1>
+
+
+{% for i in post %}:
+    <h2><a href='../{{ teacher }}'>{{ teacher }}</a></h2>
+{% endfor %}
+    {% else %}
+    <h3>Nothing was found.</h3>
+{% endif %}
