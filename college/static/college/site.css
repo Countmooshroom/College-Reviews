@@ -173,11 +173,11 @@ p, a, label {
     margin: 5px;
 }
 
-li > a {
+a {
     color: #FFD670;
 }
 
-li > a:hover {
+a:hover {
     color: white;
 }
 
@@ -204,11 +204,12 @@ li > a:hover {
 }
 
 .dept-row {
-    padding: 10px
+    padding: 0px
 }
 
 .sub-col {
     padding: 30px 15px 30px 15px;
+    margin: 10px;
     font: 24px raleway, sans-serif;
     color: #003892;
 }
