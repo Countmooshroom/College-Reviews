@@ -61,10 +61,3 @@ def vote(request, question_id):
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'college/detail.html', {'question': question})
-
-def searchbar(request):
-    if request.method == 'GET':
-        search = request.GET.get('search')
-        print('search')
-        post = Teacher.objects.all().filter(name__contains=search)
-        return render(request, 'searchbar.html', {'post': post})
