@@ -1,13 +1,36 @@
+/* ------------- COLOR SCHEME ------------- 
+
+GENERAL:
+background: Onyx: #36373A;
+navbar: Blue Charcoal: #24272A;
+links: Orange Yellow Crayola: #FFD670;
+
+SQUARES:
+By Instructor: Cedar Chest: #CE5C3F;
+By Class: Olive Drab 3: #6C8724;
+Future Column: Steel Teal: #568582;
+*/
+
+
+
+
+
+
+
 /* ------------- GLOBAL ------------- */
 
 html, body {
-    /*width:100%;
-    height:100%;*/
+    width:100%;
+    height:100%;
     margin:0;
     padding:0;
-    color: white!important;
+    color: white;
     background-color: #36373A;
+    cursor: default;
 }
+
+
+
 
 /* ------------- NAV BAR ------------- */
 * {
@@ -69,6 +92,10 @@ nav ul li a:hover {
     top: -15px;
 }
 
+
+
+
+
 /* ------------- HEADINGS ------------- */
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,6 +110,10 @@ h1, h2, h3, h4, h5, h6 {
 .prof-name {
     text-align: center;
 }
+
+
+
+
 
 /* ------------- TEXT ------------- */
 
@@ -113,6 +144,10 @@ li > a:hover {
     width: 100%;
     text-decoration: none;
 }
+
+
+
+
 
 /* ------------- COLUMN LAYOUT ------------- */
 .column {
@@ -158,10 +193,8 @@ li > a:hover {
 }
 
 
-/* ------------- CURSOR ------------- */
-body {
-    cursor: default;
-}
+
+
 
 
 /* ------------- LOGIN & REGISTER FORMS ------------- */
