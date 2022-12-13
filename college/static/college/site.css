@@ -6,6 +6,7 @@
 5. Text
 6. Column Layout
 7. Login & Register Forms
+8. Footer
 */
 
 
@@ -20,6 +21,7 @@ SQUARES:
 By Instructor: Cedar Chest: #CE5C3F;
 By Class: Olive Drab 3: #6C8724;
 Future Column: Steel Teal: #568582;
+Text: Night Blue: #003892;
 
 
 
@@ -192,15 +194,13 @@ li > a:hover {
     padding: 10px
 }
 
-.dept-col {
+.sub-col {
     padding: 30px 15px 30px 15px;
     font: 24px raleway, sans-serif;
-    color: rgb(0, 56, 146);
-    background-color:#6C8724;
+    color: #003892;
 }
 
-.dept-col:hover{
-    background-color: #6d8724b0;
+.sub-col:hover{
     color: #FFD670;
 }
 
@@ -227,8 +227,21 @@ li > a:hover {
     }
 }
 
+.dept-style {
+    background-color:#6C8724;
+}
 
+.dept-style:hover {
+    background-color: #6d8724b0;
+}
 
+.teacher-style {
+    background-color:#CE5C3F;
+}
+
+.teacher-style:hover {
+    background-color: #CE5C3Fb0;
+}
 
 
 

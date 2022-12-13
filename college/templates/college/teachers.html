@@ -4,14 +4,26 @@ List of Teachers
 {% endblock %}
 {% block content %}
 
-<h1>List of Professors</h1>
-{% for teacher in teacher_list %}
-    <li><a href="{{ teacher }}">{{ teacher }}</a></li>
-{% endfor %}
+<div class="center-text">
+    <h1>Top Voted Professors</h1>
+    {% for choice in choices|slice:":5" %}
+        <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %} 
 
-<h2>Top Voted Professors</h2>
-{% for choice in choices|slice:":5" %}
-    <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
+    <h1>Teachers</h1>
+    <h3>By Rating</h3>
+
+    <div class="row dept-row">
+    {% for teacher in teacher_list %}
+    <a class="fill-div" href="{{ teacher }}"><div class="column sub-col teacher-style">{{ teacher }}</div></a>
+        {% if forloop.last %}
+            </div>
+        {% else %}
+            {% if forloop.counter|divisibleby:"4" %}
+            </div><div class="row center-text dept-row">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>
 
 {% endblock %}
