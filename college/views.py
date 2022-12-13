@@ -29,22 +29,22 @@ def department(request, dept):
     return render(request, 'college/department.html', {'dept': dept, 'courses': course_list})
 
 
-class DetailView(generic.DetailView):
-    model = Course
-    template_name = 'college/detail.html'
-
-
-def results(request, pk):
-    course = get_object_or_404(Course, pk=pk)
+def course(request, dept, name):
+    course = get_object_or_404(Course, course_name=name)
     choices = course.choice_set.all().order_by('-votes')
     total_votes = 0
     for i in choices:
         total_votes += i.votes
-    return render(request, 'college/results.html', {'course': course, 'choices': choices, 'total_votes': total_votes})
+    return render(request, 'college/course.html', {'course': course, 'choices': choices, 'total_votes': total_votes})
 
 
-def vote(request, course_id):
-    course = get_object_or_404(Course, pk=course_id)
+def vote(request, dept, name):
+    course = get_object_or_404(Course, course_name=name)
+    return render(request, 'college/course_vote.html', {'course': course})
+
+
+def save(request, dept, name):
+    course = get_object_or_404(Course, course_name=name)
     try:
         selected_choice = course.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
@@ -56,8 +56,4 @@ def vote(request, course_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
-        return HttpResponseRedirect(reverse('college:results', args=(course.id,)))
-
-def detail(request, course_id):
-    course = get_object_or_404(Course, pk=course_id)
-    return render(request, 'college/detail.html', {'course': course})
+        return HttpResponseRedirect(reverse('college:course', args=('X', course.course_name,)))

@@ -13,6 +13,6 @@ Results
 {% endfor %}
 </ol>
 
-<a href="{% url 'college:detail' course.id %}">Vote again?</a>
+<a href="{% url 'college:vote' course.course_name|slice:'0:4' course.course_name %}">Cast a Vote</a>
 
 {% endblock %}

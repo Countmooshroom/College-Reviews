@@ -13,7 +13,7 @@ Home
         {% if courses %}
             <ul>
             {% for course in courses|slice:":5" %}
-                <li><a href="{% url 'college:detail' course.id %}">{{ course.course_name }}</a></li>
+                <li><a href="{% url 'college:course' course.course_name|slice:'0:4' course.course_name %}">{{ course.course_name }}</a></li>
                 {% endfor %}
                 <li><a href="{% url 'college:courses' %}">View All...</a></li>
             </ul>
