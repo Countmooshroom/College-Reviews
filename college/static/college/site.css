@@ -1,3 +1,14 @@
+/*  ------------- TABLE OF CONTENTS -------------
+1. Color Scheme
+2. Global
+3. Navigation
+4. Headings
+5. Text
+6. Column Layout
+7. Login & Register Forms
+*/
+
+
 /* ------------- COLOR SCHEME ------------- 
 
 GENERAL:
@@ -9,6 +20,8 @@ SQUARES:
 By Instructor: Cedar Chest: #CE5C3F;
 By Class: Olive Drab 3: #6C8724;
 Future Column: Steel Teal: #568582;
+
+
 
 NEED MORE COLORS?
 Here are the base colors. You can generate more by
@@ -135,6 +148,16 @@ p, a, label {
     text-align: center;
 }
 
+.center-text > h1 {
+    padding: 15px 0 0 0;
+    margin: 5px;
+}
+
+.center-text > h3 {
+    padding: 0 0 15px 0;
+    margin: 5px;
+}
+
 li > a {
     color: #FFD670;
 }
@@ -168,10 +191,17 @@ li > a:hover {
 .dept-row {
     padding: 10px
 }
+
 .dept-col {
     padding: 30px 15px 30px 15px;
     font: 24px raleway, sans-serif;
     color: rgb(0, 56, 146);
+    background-color:#6C8724;
+}
+
+.dept-col:hover{
+    background-color: #6d8724b0;
+    color: #FFD670;
 }
 
 #home-col {
@@ -238,4 +268,14 @@ div.full-width-row {
 
 .error-message {
     color: red;
+}
+
+
+
+
+
+
+/* -------------- FOOTER ------------------- */
+footer {
+    padding-bottom: 5px;
 }
