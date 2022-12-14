@@ -4,24 +4,16 @@ from django.urls import reverse
 from college.models import Choice, Teacher
 
 def teachers(request):
-    print('1')
-    search_query = request.GET.get('search', '')
-    print('what monkeys')
-    if search_query:
-        print('3')
-        teachers = Teacher.objects.filter(name__icontains=search_query)
-        print('4')
-        print(teachers)
-    else:
-        teachers = Teacher.objects.all()
-        print(teachers)
-
-
     choices = Choice.objects.all().values().order_by('-votes')
+    
+    search_query = request.GET.get('search', '')
     teacher_list = []
-    for choice in choices:
-        teacher_list.append(choice['choice_text'])
-    teacher_list = list(dict.fromkeys(teacher_list))#remove duplicates
+    if search_query:
+        teacher_list = Teacher.objects.filter(name__icontains=search_query)
+    else:
+        for choice in choices:
+            teacher_list.append(choice['choice_text'])
+        teacher_list = list(dict.fromkeys(teacher_list))#remove duplicates
     return render(request, 'college/teachers.html', {'choices': choices, 'teacher_list': teacher_list})
 
 def professor(request, name):

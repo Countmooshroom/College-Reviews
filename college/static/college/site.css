@@ -287,6 +287,11 @@ div.full-width-row {
     padding: 5px;
 }
 
+.float-right {
+    text-align: right;
+    position: relative;
+    padding-right: 25px;
+}
 
 .w80 {
     width: 80%;

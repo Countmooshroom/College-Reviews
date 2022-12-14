@@ -6,11 +6,6 @@ List of Teachers
 
 <div class="center-text">
 
-    <form action="{% url 'teachers:teachers' %}">
-        <input class="" type="search" aria-label="search" name="search">
-        <input class="" type="submit">
-    </form>
-
     <h1>Top Voted Professors</h1>
     {% for choice in choices|slice:":5" %}
         <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
@@ -18,6 +13,11 @@ List of Teachers
 
     <h1>Teachers</h1>
     <h3>By Rating</h3>
+    
+    <form action="{% url 'teachers:teachers' %}" class="float-right">
+        <input ype="search" aria-label="search" name="search">
+        <input class="form-submit" type="submit" value="Search">
+    </form>
 
     <div class="row dept-row">
     {% for teacher in teacher_list %}
