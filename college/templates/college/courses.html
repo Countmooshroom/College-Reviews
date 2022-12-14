@@ -10,7 +10,7 @@ Classes
 
     <div class="row dept-row">
     {% for dept in departments %}
-    <a class="fill-div" href="courses/{{ dept }}"><div class="column sub-col dept-style">{{ dept }}</div></a>
+    <a class="fill-div" href="{{ dept }}"><div class="column sub-col dept-style">{{ dept }}</div></a>
         {% if forloop.last %}
             </div>
         {% else %}

@@ -4,13 +4,17 @@ Classes
 {% endblock %}
 {% block content %}
 
-<h1>Department: {{ dept }}</h1>
-<h3>Course List</h3>
+<div class="center-text">
+    <h1>Department: {{ dept }}</h1>
+    <h3>Course List</h3>
 
-<ul>
-{% for course in courses %}
-<li><a href="{% url 'college:detail' course.id %}">{{ course.question_text }}</a></li>
-{% endfor %}
-</ul>
+    <ul>
+    {% for course in courses %}
+    <li><a href="{% url 'college:course' course.course_name|slice:'0:4' course.course_name %}">{{ course.course_name }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'college:courses' %}">Back To All Courses</a>
+</div>
 
 {% endblock %}

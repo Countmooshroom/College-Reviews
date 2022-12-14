@@ -6,29 +6,29 @@ List of Teachers
 
 <h1 class="prof-name">{{ prof.name }}</h1>
 
-{% if prof.homework_count %}
+{% if prof.votes %}
 <div class="row center-text" id="prof-stats">
     <div class="column">
         <p>Average amount of homework:<br>
         {% load static %}
-        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.homework_sum prof.homework_count 1 %}.png" width="150px" />
-        {% widthratio prof.homework_sum prof.homework_count 1 %}/5</p>
+        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.homework prof.votes 1 %}.png" width="150px" />
+        {% widthratio prof.homework prof.votes 1 %}/5</p>
 
         <p>Average amount of essays:<br>
         {% load static %}
-        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.essays_sum prof.essays_count 1 %}.png" width="150px" />
-        {% widthratio prof.essays_sum prof.essays_count 1 %}/5</p>
+        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.essays prof.votes 1 %}.png" width="150px" />
+        {% widthratio prof.essays prof.votes 1 %}/5</p>
     </div>
     <div class="column">
     <p>Average importance of attendance:<br>
         {% load static %}
-        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.attendance_sum prof.attendance_count 1 %}.png" width="150px" />
-        {% widthratio prof.attendance_sum prof.attendance_count 1 %}/5</p>
+        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.attendance prof.votes 1 %}.png" width="150px" />
+        {% widthratio prof.attendance prof.votes 1 %}/5</p>
 
     <p>Average overall difficulty:<br>
         {% load static %}
-        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.difficulty_sum prof.difficulty_count 1 %}.png" width="150px" />
-        {% widthratio prof.difficulty_sum prof.difficulty_count 1 %}/5</p>
+        <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.difficulty prof.votes 1 %}.png" width="150px" />
+        {% widthratio prof.difficulty prof.votes 1 %}/5</p>
     </div>
 </div>
 {% else %}

@@ -1,0 +1,21 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Results
+{% endblock %}
+{% block content %}
+
+<div class="center-text">
+    <h1>{{ course.course_name }}</h1>
+    <h2>Top Professor{{ choices.count|pluralize }}</h2>
+
+    <ol>
+    {% for choice in choices|slice:":2" %}
+        <li>{{ choice.choice_text }} - {% widthratio choice.votes total_votes 100 %}% ({{ choice.votes }} vote{{ choice.votes|pluralize }})</li>
+    {% endfor %}
+    </ol>
+
+    <a href="{% url 'college:vote' course.course_name|slice:'0:4' course.course_name %}">Cast a Vote</a><br><br>
+    <a href="{% url 'college:courses' %}">Back To All Courses</a>
+</div>
+
+{% endblock %}
