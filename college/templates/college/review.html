@@ -4,24 +4,36 @@ Review {{ prof.name }}
 {% endblock %}
 {% block content %}
 
-<form action="{% url 'teachers:save' prof.name %}" method="post"> <!--Eventually change link-->
+<div class="full-width-row">
+<form class="login" action="{% url 'teachers:save' prof.name %}" method="post"> <!--Eventually change link-->
     {% csrf_token %}
     <fieldset>
         <legend><h1>{{ prof.name }}</h1></legend>
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        <label for="homework">On a scale of 1 (none) to 5 (lots), how much homework did this teacher assign?</label><br>
-        <input type="number" name="homework" id="homework" value="1" min="1" max="5"><br><br>
-        
-        <label for="essays">On a scale of 1 (none) to 5 (lots), how many essays did this teacher assign?</label><br>
-        <input type="number" name="essays" id="essays" value="1" min="1" max="5"><br><br>
+        <h2 class="small-h2">On a scale from 1 (low) to 5 (high)...</h2>
 
-        <label for="attendance">On a scale of 1 (not important) to 5 (necessary), how important was attendance in this teacher's classes?</label><br>
-        <input type="number" name="attendance" id="attendance" value="1" min="1" max="5"><br><br>
+        <div class="review-category">
+            <label for="homework">How much homework did this teacher assign?</label>
+            <input class="review-num" type="number" name="homework" id="homework" value="1" min="1" max="5"><br>
+        </div>
 
-        <label for="difficulty">On a scale of 1 (easy) to 5 (hard), how difficult were this teacher's classes overall?</label><br>
-        <input type="number" name="difficulty" id="difficulty" value="1" min="1" max="5"><br>
+        <div class="review-category">
+            <label for="essays">How many essays did this teacher assign?</label>
+            <input class="review-num" type="number" name="essays" id="essays" value="1" min="1" max="5"><br>
+        </div>
+
+        <div class="review-category">
+            <label for="attendance">How important was attendance in this teacher's classes?</label>
+            <input class="review-num" type="number" name="attendance" id="attendance" value="1" min="1" max="5"><br>
+        </div>
+
+        <div class="review-category">
+            <label for="difficulty">How difficult were this teacher's classes overall?</label>
+            <input class="review-num" type="number" name="difficulty" id="difficulty" value="1" min="1" max="5"><br>
+        </div>
     </fieldset>
     <input type="submit" value="Submit">
 </form>
+</div>
 
 {% endblock %}

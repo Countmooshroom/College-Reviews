@@ -14,13 +14,13 @@ List of Teachers
         <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.homework prof.votes 1 %}.png" width="150px" />
         {% widthratio prof.homework prof.votes 1 %}/5</p>
 
-        <p>Average amount of essays:<br>
+        <p>Amount of essays:<br>
         {% load static %}
         <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.essays prof.votes 1 %}.png" width="150px" />
         {% widthratio prof.essays prof.votes 1 %}/5</p>
     </div>
     <div class="column">
-    <p>Average importance of attendance:<br>
+    <p>Importance of attendance:<br>
         {% load static %}
         <img style="vertical-align:middle" src="{% static 'college/' %}progress_bar{% widthratio prof.attendance prof.votes 1 %}.png" width="150px" />
         {% widthratio prof.attendance prof.votes 1 %}/5</p>
