@@ -1,0 +1,27 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+
+<div class="center-text">
+    <h1>Add a Teacher to {{ course_name }}</h1>
+
+    {% if user.is_authenticated %}
+    <form action="{% url 'input:save_teacher' course_name %}" method="post" style="margin: 0 10% 0 10%;">
+        {% csrf_token %}
+        <fieldset style="padding: 30px 0 30px 0;">
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            <label for="teacher-name">Teacher's First and Last Name</label>
+            <input type="text" name="teacher-name" id="teacher-name">
+        </fieldset>
+        <input type="submit" value="Add">
+    </form>
+    {% else %}
+        <br><br>
+        <h2 style="color: #568582;">Please log in to add classes!</h2>
+        <br><br>
+    {% endif %}
+</div>
+
+{% endblock %}

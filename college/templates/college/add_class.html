@@ -1,0 +1,28 @@
+{% extends "college/layout.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+
+<div class="center-text">
+    <h1>Add a Class</h1>
+    <p>Is your class not yet listed?  Add it here!</p>
+
+    {% if user.is_authenticated %}
+    <form action="{% url 'input:save_class' %}" method="post" style="margin: 0 10% 0 10%;">
+        {% csrf_token %}
+        <fieldset style="padding: 30px 0 30px 0;">
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            <label for="class-name">What is the class name? (ex: COSC 1010)</label><br>
+            <input type="text" name="class-name" id="class-name">
+        </fieldset>
+        <input type="submit" value="Next">
+    </form>
+    {% else %}
+        <br><br>
+        <h2 style="color: #568582;">Please log in to add classes!</h2>
+        <br><br>
+    {% endif %}
+</div>
+
+{% endblock %}

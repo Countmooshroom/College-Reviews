@@ -49,7 +49,7 @@ def save(request, dept, name):
         selected_choice = course.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
-        return render(request, 'college/detail.html', {
+        return render(request, 'college/course_vote.html', {
             'course': course,
             'error_message': "You didn't select a choice.",
         })
