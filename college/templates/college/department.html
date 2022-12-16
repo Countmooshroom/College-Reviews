@@ -8,12 +8,21 @@ Classes
     <h1>Department: {{ dept }}</h1>
     <h3>Course List</h3>
 
-    <ul>
+    <ul class="no-bullets">
     {% for course in courses %}
     <li><a href="{% url 'college:course' course.course_name|slice:'0:4' course.course_name %}">{{ course.course_name }}</a></li>
     {% endfor %}
     </ul>
 
+    
+    <ul class="no-bullets">
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'teachers:review' prof.name %}">Add a Class</a></li>
+        {% else %}
+            <li><a href="{% url 'college:login">Login</a> to leave a review!</li>
+        {% endif %}
+        <li><a href="{% url 'teachers:teachers' %}">Go Back</a></li>
+    </ul>
     <a href="{% url 'college:courses' %}">Back To All Courses</a>
 </div>
 

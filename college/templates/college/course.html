@@ -9,7 +9,7 @@ Results
     <h2>Top Professor{{ choices.count|pluralize }}</h2>
 
     {% if choices %}
-        <ol>
+        <ol class="no-bullets">
         {% for choice in choices|slice:":2" %}
             <li>{{ choice.choice_text }} - {% widthratio choice.votes total_votes 100 %}% ({{ choice.votes }} vote{{ choice.votes|pluralize }})</li>
         {% endfor %}
@@ -18,9 +18,15 @@ Results
         <br><p>No known teachers</p><br>
     {% endif %}
 
-    <a href="{% url 'college:vote' course.course_name|slice:'0:4' course.course_name %}">Cast a Vote</a><br><br>
-    <a href="{% url 'input:add_teacher' course.course_name %}">Add a Missing Teacher</a><br><br>
-    <a href="{% url 'college:courses' %}">Back To All Courses</a>
+        <ul class="no-bullets">
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'college:vote' course.course_name|slice:'0:4' course.course_name %}">Cast a Vote</a></li>
+                <li><a href="{% url 'input:add_teacher' course.course_name %}">Add a Missing Teacher</a></li>
+            {% else %}
+                <li><a href="{% url 'accounts:login' %}"">Login</a> to cast a vote or add a missing teacher!</li>
+            {% endif %}
+            <li><a href="{% url 'college:courses' %}">Go Back</a></li>
+        </ul>
 </div>
 
 {% endblock %}
