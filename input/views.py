@@ -10,6 +10,10 @@ def add_class(request):
 def add_teacher(request, course_name):
     return render(request, 'college/add_teacher.html', {'course_name': course_name})
 
+def add_department(request):
+    pass
+    return render(request, 'college/add_department.html')
+
 def save_class(request):
     name = request.POST['class-name']
     try:

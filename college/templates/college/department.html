@@ -17,13 +17,12 @@ Classes
     
     <ul class="no-bullets">
         {% if user.is_authenticated %}
-            <li><a href="{% url 'teachers:review' prof.name %}">Add a Class</a></li>
+            <li><a href="{% url 'input:add_class' %}">Add a Class</a></li>
         {% else %}
-            <li><a href="{% url 'accounts:login">Login</a> to add a class!</li>
+            <li><a href="{% url 'accounts:login' %}">Login</a> to add a class!</li>
         {% endif %}
-        <li><a href="{% url 'teachers:teachers' %}">Go Back</a></li>
+        <li><a href="{% url 'college:courses' %}">Go Back</a></li>
     </ul>
-    <a href="{% url 'college:courses' %}">Back To All Courses</a>
 </div>
 
 {% endblock %}

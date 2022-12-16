@@ -57,3 +57,6 @@ def save(request, dept, name):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse('college:course', args=('X', course.course_name,)))
+
+def about(request):
+    return render(request, 'college/about.html')

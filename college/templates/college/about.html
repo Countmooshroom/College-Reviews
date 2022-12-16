@@ -1,0 +1,37 @@
+{% extends "college/layout.html" %}
+{% block title %}
+About
+{% endblock %}
+{% block content %}
+
+<h1 class="main-heading">About</h1>
+<p class="tagline"></p>
+
+<div class="row">
+    <div class="column" id="home-col" style="background-color:#6C8724;">
+        <h2>Background</h2>
+        <p>This Django web application was started by <strong>Ben Watts</strong> in Fall 2022 under the direction of Dr. Charlotte Gruner. He created the open source project on GitHub and welcomes others to contibute to the project. <a href="https://github.com/Countmooshroom/College-Reviews" target="_blank">You can find the project here!</a></p>
+    </div>
+
+    <div class="column" id="home-col" style="background-color:#CE5C3F;">
+        <h2>Goal</h2>
+        <p>Provide COSC students with an opportunity to contribute to an ongoing project. Students who contribute to this project will learn:</p>
+        <ul class="center-text no-bullets">
+            <li>HTML & CSS</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>GitHub</li>
+        </ul>
+    </div>
+    
+    <div class="column" id="home-col" style="background-color:#568582;">
+        <h2>The Future</h2>
+        <p>The project will eventually go live as a web application that will help Casper College students know what to expect before registering for classes.</p>
+    </div>
+</div> 
+
+<ul class="no-bullets center-text">
+    <li><a href="{% url 'college:index' %}">Go Back</a></li>
+</ul>
+
+{% endblock %}

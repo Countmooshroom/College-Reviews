@@ -32,6 +32,18 @@ List of Teachers
             {% endif %}
         {% endif %}
     {% endfor %}
+
+
+    <ul class="no-bullets">
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'input:add_teacher' course.course_name %}">Add a Missing Teacher</a></li>
+        {% else %}
+            <li><a href="{% url 'accounts:login' %}">Login</a> to add a missing teacher!</li>
+        {% endif %}
+        <li><a href="{% url 'teachers:teachers' %}">Go Back</a></li>
+    </ul>
+
+
 </div>
 
 {% endblock %}

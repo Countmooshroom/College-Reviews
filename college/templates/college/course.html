@@ -9,11 +9,11 @@ Results
     <h2>Top Professor{{ choices.count|pluralize }}</h2>
 
     {% if choices %}
-        <ol class="no-bullets">
+        <ul class="no-bullets">
         {% for choice in choices|slice:":2" %}
             <li>{{ choice.choice_text }} - {% widthratio choice.votes total_votes 100 %}% ({{ choice.votes }} vote{{ choice.votes|pluralize }})</li>
         {% endfor %}
-        </ol>
+        </ul>
     {% else %}
         <br><p>No known teachers</p><br>
     {% endif %}
