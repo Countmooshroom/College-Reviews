@@ -19,7 +19,7 @@ Classes
         {% if user.is_authenticated %}
             <li><a href="{% url 'teachers:review' prof.name %}">Add a Class</a></li>
         {% else %}
-            <li><a href="{% url 'college:login">Login</a> to leave a review!</li>
+            <li><a href="{% url 'accounts:login">Login</a> to add a class!</li>
         {% endif %}
         <li><a href="{% url 'teachers:teachers' %}">Go Back</a></li>
     </ul>

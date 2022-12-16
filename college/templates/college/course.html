@@ -23,7 +23,7 @@ Results
                 <li><a href="{% url 'college:vote' course.course_name|slice:'0:4' course.course_name %}">Cast a Vote</a></li>
                 <li><a href="{% url 'input:add_teacher' course.course_name %}">Add a Missing Teacher</a></li>
             {% else %}
-                <li><a href="{% url 'accounts:login' %}"">Login</a> to cast a vote or add a missing teacher!</li>
+                <li><a href="{% url 'accounts:login' %}">Login</a> to cast a vote or add a missing teacher!</li>
             {% endif %}
             <li><a href="{% url 'college:courses' %}">Go Back</a></li>
         </ul>
